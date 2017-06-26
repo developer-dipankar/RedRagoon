@@ -9,24 +9,19 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/function', function(req, res, next) {
-  // res.render('globalFunction', { title: 'Express', glob: globals });
-  // var printhellofunction = glob.hellofunction(10);
-  // var helloworldfunction = glob.helloworldfunction('John');
-  // console.log(printhellofunction);
-  // console.log(helloworldfunction);
-  // console.log(globals.domain);
-  var mailsend = glob.mailSend();
-  // res.mailer.send('mailTemplate/demoMail', {
-	 //  	to: 'deep.dashng@gmail.com',
-	 //  	subject: 'Test Mail'
-	 //  }, function(err){
-	 //  	if (err) {
-	 //  		console.log(err);
-	 //  		return;
-	 //  	}
-  // });
+  res.render('globalFunction', { title: 'Express', glob: globals });
+  var printhellofunction = glob.hellofunction(10);
+  var helloworldfunction = glob.helloworldfunction('John');
+  console.log(printhellofunction);
+  console.log(helloworldfunction);
+  console.log(globals.domain);
 
 });
+router.get('/mailSend', function (req, res, next) {
+  // body...
+  var mailsend = glob.mailSend();
+
+})
 
 
 module.exports = router;
